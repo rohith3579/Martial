@@ -7,7 +7,7 @@ let loadImage = (src,callback) => {
     img.src = src;
 };
 let imagePath = (frameNumber,animation) =>{
-   return "html/"+ animation +"/"+ frameNumber + ".png";
+   return "https://github.com/rohith3579/Martial/blob/main/"+ animation +"/"+ frameNumber + ".png";
 };
 let frames = {
   idle: [1,2,3,4,5,6,7,8],
