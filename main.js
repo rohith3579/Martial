@@ -13,16 +13,14 @@ let frames = {
   idle: [1,2,3,4,5,6,7,8],
    kick: [1,2,3,4,5,6,7],
    punch: [ 1,2,3,4,5,6,7],
-   block:[1,2,3,4,5,6,7,8,9],
-   backward:[1,2,3,4,5,6],
 }
 
    let loadImages = (callback) => {
-   let images ={idle:[],kick:[],punch:[],block:[],backward:[]};
+   let images ={idle:[],kick:[],punch:[]};
 
    let imagesToLoad=0;
 
-   ["idle","kick","punch","block","backward"].forEach((animation) => { 
+   ["idle","kick","punch"].forEach((animation) => { 
       let animationFrames=frames[animation];
       imagesToLoad=imagesToLoad+animationFrames.length;
 
@@ -72,13 +70,6 @@ loadImages((images)=>{
   };
   document.getElementById("punch").onclick=() =>{
    queuedAnimations.push("punch");
-
-};
-document.getElementById("block").onclick=() =>{
-   queuedAnimations.push("block");
-};
-document.getElementById("backward").onclick=() =>{
-   queuedAnimations.push("backward");
 };
    document.addEventListener("keyup",(event)=>{
 
@@ -88,12 +79,6 @@ document.getElementById("backward").onclick=() =>{
       }
       else if(key==="ArrowRight"){
          queuedAnimations.push("punch");
-      }
-      else if(key==="ArrowUp"){
-         queuedAnimations.push("block");
-      }
-      else if(key==="ArrowDown"){
-         queuedAnimations.push("backward");
       }
    });
 });
